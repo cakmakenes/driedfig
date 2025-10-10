@@ -31,20 +31,20 @@ export default function Footer() {
             <div className="mt-6 space-y-3 text-white/90">
               <div>
                 <span className="block text-white/60">Phone</span>
-                <a href="tel:+902563456789" className="hover:text-[#CDE2D8]">+90 256 345 67 89</a>
+                <a href="tel:+902563456789" className="hover:text-[#CDE2D8]">0256 326 03 26</a>
               </div>
               <div>
                 <span className="block text-white/60">Fax</span>
-                <a href="tel:+902563456788" className="hover:text-[#CDE2D8]">+90 256 345 67 88</a>
+                <a href="tel:+902563456788" className="hover:text-[#CDE2D8]">0256 315 00 26</a>
               </div>
               <div>
                 <span className="block text-white/60">Email</span>
-                <a href="mailto:info@kaplanlar.com" className="hover:text-[#CDE2D8]">info@kaplanlar.com</a>
+                <a href="mailto:info@kaplanlar.com" className="hover:text-[#CDE2D8]">info@kaplanlarincir.com.tr</a>
               </div>
               <div>
                 <span className="block text-white/60">Address</span>
                 <p>
-                  Kaplanlar İncir, Ortaklar / Germencik,
+                Arslanlı Cumhuriyet Mah. Esat Ergüler Blv. 55 Nazilli
                   <br />
                   Aydın, Türkiye
                 </p>
@@ -56,8 +56,7 @@ export default function Footer() {
         <div className="mt-10 border-t border-white/10 pt-6 text-sm text-white/60 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Kaplanlar Dried Fruits. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <a href="/privacy" className="hover:text-[#CDE2D8]">Privacy</a>
-            <a href="/cookies" className="hover:text-[#CDE2D8]">Cookies</a>
+          
           </div>
         </div>
       </div>

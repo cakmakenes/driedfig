@@ -20,7 +20,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6 h-full flex items-center">
               <div className="max-w-2xl text-white drop-shadow">
-                <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">ZART Figs & Dried Fruits</h1>
+                <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">Kaplanlar Figs & Dried Fruits</h1>
                 <p className="mt-4 text-base sm:text-lg text-white/90">
                   From harvest to packaging, Kaplanlar delivers consistent quality you can trust.
                 </p>

@@ -1,0 +1,132 @@
+# Kaplanlar Dried Fruits – Website Design Summary (design.txt)
+
+Purpose: A clean, modern corporate website focused on figs and dried figs, also presenting dried apricots/raisins/pistachios and the factory’s processing, packaging, mission, and capabilities; emphasizing trust and quality.
+
+## 1) Information Architecture and Pages
+- Home (`/`)
+  - Hero (brand promise + strong visual, quick CTA)
+  - Featured Products (focus on figs/dried figs; teasers for apricot/raisin/pistachio)
+  - Production Process Summary (3–5 iconized steps)
+  - Our Brands (logo grid)
+  - Why Us? (quality certificates, experience, sustainability)
+  - Testimonials or References (optional)
+  - CTA (Contact Us)
+
+- About Us (`/about`)
+  - Company story, mission/vision, brief facility/factory intro
+  - Quality and certifications (ISO, HACCP, etc.)
+
+- Production (`/production`)
+  - Detailed production & processing flow (harvest → sorting → drying → grading → packaging)
+  - Visual/icon timeline with brief texts
+
+- Our Brands (`/brands`)
+  - Brand/sub-brands, logos and short descriptions
+  - Packaging/box visuals, size/weight variants
+
+- Products (`/products`)
+  - Category cards: Figs/Dried Figs (primary), Dried Apricots, Raisins, Pistachios
+  - Short notes per product: origin, grade, harvest season, packaging options
+
+- Contact Us (`/contact`)
+  - Contact form (name, email, company, phone [optional], subject, message)
+  - Submission: email to company inbox + success/failure feedback
+  - Company address, phone, email, map (optional)
+
+Note: The initial request listed “Production” twice; a dedicated `Products` page is included instead of a duplicate.
+
+## 2) Visual Style
+- Color Palette (clean, natural, trustworthy)
+  - Primary: Olive Green — #2E6B4D
+  - Accent: Terracotta — #C96F4A
+  - Neutral Dark: #1F2937
+  - Neutral Mid: #6B7280
+  - Background: #F8FAF9
+  - Surface: #FFFFFF
+  - Feedback: Success #16A34A, Error #DC2626
+
+- Typography
+  - Headings: Poppins (600/700)
+  - Body: Inter (400/500)
+  - Generous line-height; Google Fonts with full Turkish character support
+
+- Photography/Illustration
+  - Natural-light product macros; scenes from process (sorting, drying, packaging)
+  - Iconography flat/outlined, simple and consistent
+
+## 3) Layout and Components
+- Grid and Spacing
+  - Container width: 1200px max, side paddings 16–24px
+  - Section vertical spacing: 72–96px (48–64px on mobile)
+
+- Navigation
+  - Top nav: logo left, menu right (About, Production, Brands, Products, Contact)
+  - Sticky on scroll with subtle shadow
+  - Mobile hamburger and full-screen/drawer menu
+
+- Footer
+  - Left: logo + short blurb; Middle: quick links; Right: contact info, social links
+  - Bottom bar: copyright, Privacy/Cookie Policy links (optional)
+
+- Reusable Component Library
+  - Button (primary/secondary/ghost, size variants)
+  - Card (product card, brand card)
+  - SectionHeader (title + subtitle)
+  - ProcessStep (icon + title + short description)
+  - Testimonial (optional)
+  - FormInput, FormTextarea, FormStatus (loading/success/error)
+
+## 4) Responsive Breakpoints
+- Mobile (<640px): single column, large touch targets, +2px typography sizing
+- Tablet (640–1024px): two-column grid, balanced visuals/content
+- Desktop (>1024px): 3–4 column grid, full layout
+
+## 5) Accessibility
+- Contrast ratio at least 4.5:1 (text/background)
+- Full keyboard access to interactive elements, visible focus ring
+- Meaningful labels for links/buttons; labels/aria‑describedby on form fields
+
+## 6) SEO and Content
+- Page titles and meta descriptions: product + city/country focus
+- Structured data: Organization, Product (summary), BreadcrumbList
+- Keywords: dried figs, Aydın figs, dried fruit export, etc.
+- Image optimization for fast loading (Next Image)
+
+## 7) Contact Form Requirements
+- Fields: fullName, email, company, phone (optional), subject, message, hidden honeypot
+- Validation: required fields and email format; max length safeguards
+- Submission: via Next.js API route using SMTP (e.g., Nodemailer) to company email
+- States: sending, success, error; clear feedback to user
+- Anti‑spam: honeypot + simple rate limiting (time window per IP)
+
+## 8) Technical Architecture (Next.js 14+ / App Router)
+- Page files: `src/app/{page}/page.js`
+- Shared layout: `src/app/layout.js` (includes Navbar/Footer)
+- Global styles: `src/app/globals.css` (Tailwind if used)
+- Images: within `public/`, served via `next/image`
+- Email handling: `src/app/api/contact/route.js` (POST)
+
+## 9) Performance
+- Proper image sizing and lazy loading
+- Font display: swap; only required font weights
+- Code splitting: per page; keep 3rd-party scripts minimal
+
+## 10) Content Requirements (from client)
+- Corporate copy (TR/EN optional)
+- Product photos (box/packaging/product macro)
+- Process photos or illustrations
+- Brand logos and packaging variant info
+- Certificates (pdf/jpg) and numbers
+- Contact details (address/phone/email), map link
+
+## 11) Roadmap (Implementation Steps)
+1. UI kit and thematic tokens (colors, typography, spacing)
+2. Navbar/Footer and layout
+3. Home page sections
+4. Products page and product cards
+5. Production flow page
+6. Brands page
+7. About page
+8. Contact form + API route + SMTP
+9. Content integration and image optimization
+10. SEO configuration and structured data

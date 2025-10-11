@@ -14,16 +14,30 @@ export async function POST(request) {
       return new Response("Missing required fields", { status: 400 });
     }
 
+    // Check if environment variables are set
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error("SMTP environment variables not configured");
+      return new Response("Email service not configured", { status: 500 });
+    }
+
     // Create transporter
     const transporter = nodemailer.createTransporter({
       host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
+      port: parseInt(process.env.SMTP_PORT) || 587,
       secure: process.env.SMTP_SECURE === "true",
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
     });
+
+    // Verify transporter configuration
+    try {
+      await transporter.verify();
+    } catch (verifyError) {
+      console.error("SMTP verification failed:", verifyError);
+      return new Response("Email service configuration error", { status: 500 });
+    }
 
     // Email content
     const mailOptions = {
@@ -50,6 +64,6 @@ export async function POST(request) {
     return new Response("Email sent successfully", { status: 200 });
   } catch (error) {
     console.error("Error sending email:", error);
-    return new Response("Internal server error", { status: 500 });
+    return new Response(`Internal server error: ${error.message}`, { status: 500 });
   }
 }

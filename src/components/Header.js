@@ -29,8 +29,8 @@ export default function Header() {
     { href: "/contact", label: "Contact" },
   ];
 
-  // Keep nav items white for contrast
-  const textClass = scrolled ? "text-white" : "text-white drop-shadow";
+  // Keep nav items white for contrast with better shadow
+  const textClass = scrolled ? "text-white drop-shadow-lg" : "text-white drop-shadow-xl";
   const linkHover = "hover:text-[#CDE2D8]";
   const headerHeight = scrolled ? "h-16" : "h-20"; // shrink height on scroll
   // Enlarge scrolled green logo for better visibility
@@ -53,16 +53,16 @@ export default function Header() {
                 alt="Kaplanlar logo (white)"
                 fill
                 priority
-                className={`object-contain will-change-transform transition-all duration-500 ease-in-out ${
+                className={`object-contain will-change-transform transition-all duration-500 ease-in-out drop-shadow-lg ${
                   scrolled ? "opacity-0 -translate-y-1 scale-95" : "opacity-100 translate-y-0 scale-100"
                 }`}
               />
               <Image
-                src="/LOGO_Kaplanlar_white.png"
+                src="/LOGO_Kaplanlar-removebg-preview.png"
                 alt="Kaplanlar logo (green)"
                 fill
                 priority
-                className={`object-contain will-change-transform transition-all duration-500 ease-in-out ${
+                className={`object-contain will-change-transform transition-all duration-500 ease-in-out drop-shadow-lg ${
                   scrolled ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"
                 }`}
               />

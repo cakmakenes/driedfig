@@ -79,7 +79,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
                 />
               </div>
 
@@ -94,7 +94,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
                 />
               </div>
 
@@ -108,7 +108,7 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
                 />
               </div>
 
@@ -122,7 +122,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
                 />
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
               />
             </div>
 

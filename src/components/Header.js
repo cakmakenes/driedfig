@@ -52,6 +52,7 @@ export default function Header() {
                 src="/LOGO_Kaplanlar_white.png"
                 alt="Kaplanlar logo (white)"
                 fill
+                sizes="(max-width: 768px) 150px, 210px"
                 priority
                 className={`object-contain will-change-transform transition-all duration-500 ease-in-out drop-shadow-lg ${
                   scrolled ? "opacity-0 -translate-y-1 scale-95" : "opacity-100 translate-y-0 scale-100"
@@ -61,6 +62,7 @@ export default function Header() {
                 src="/LOGO_Kaplanlar-removebg-preview.png"
                 alt="Kaplanlar logo (green)"
                 fill
+                sizes="(max-width: 768px) 150px, 200px"
                 priority
                 className={`object-contain will-change-transform transition-all duration-500 ease-in-out drop-shadow-lg ${
                   scrolled ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"

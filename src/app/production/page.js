@@ -81,7 +81,7 @@ export default function Production() {
 
       {/* Production Carousel Section */}
       <div className="py-16">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-semibold text-[#1F2937] mb-4">Production Stages</h2>
             <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
@@ -91,9 +91,9 @@ export default function Production() {
           </div>
 
           {/* Carousel Container */}
-          <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden max-w-4xl mx-auto">
             {/* Main Image Display */}
-            <div className="relative h-[500px] md:h-[600px]">
+            <div className="relative h-[400px] md:h-[500px] lg:h-[600px]">
               <Image
                 src={productionImages[currentImage].src}
                 alt={productionImages[currentImage].title}
@@ -134,16 +134,16 @@ export default function Production() {
             </div>
 
             {/* Thumbnail Navigation */}
-            <div className="p-6 bg-gray-50">
-              <div className="flex justify-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            <div className="p-8 bg-gray-50 border-t border-gray-200">
+              <div className="flex justify-start md:justify-center gap-3 overflow-x-auto pb-4 scrollbar-hide mt-6 px-4 snap-x snap-mandatory">
                 {productionImages.map((image, index) => (
                   <button
                     key={index}
                     onClick={() => goToImage(index)}
-                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden transition-all duration-300 flex-shrink-0 ${
+                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden transition-all duration-300 flex-shrink-0 snap-center my-2 ${
                       currentImage === index 
-                        ? 'ring-4 ring-[#2E6B4D] scale-110' 
-                        : 'hover:scale-105 opacity-70 hover:opacity-100'
+                        ? 'ring-4 ring-[#2E6B4D] ring-offset-1 ring-offset-gray-50 scale-110 shadow-lg' 
+                        : 'hover:scale-105 opacity-70 hover:opacity-100 border-2 border-transparent hover:border-gray-300'
                     }`}
                   >
                     <Image

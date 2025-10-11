@@ -34,19 +34,19 @@ export default function Header() {
   const linkHover = "hover:text-[#CDE2D8]";
   const headerHeight = scrolled ? "h-16" : "h-20"; // shrink height on scroll
   // Enlarge scrolled green logo for better visibility
-  const logoSizeClass = scrolled ? "h-[52px] w-[180px]" : "h-[54px] w-[190px]";
+  const logoSizeClass = scrolled ? "h-[58px] w-[200px]" : "h-[60px] w-[210px]";
   const linkSizeClass = scrolled ? "text-sm" : "text-base"; // shrink link font size
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 ease-in-out ${
-        scrolled ? "bg-black/20 backdrop-blur-md border-b border-black/10" : "bg-transparent"
+        scrolled ? "bg-black/20 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className={`flex items-center justify-between transition-[height] duration-500 ease-in-out ${headerHeight}`}>
           {/* Logo section with enhanced cross-fade */}
-          <Link href="/" className="flex items-center gap-2" aria-label="Kaplanlar Dried Fruits - Home">
+          <Link href="/" className="flex items-center gap-2 -ml-2" aria-label="Kaplanlar Dried Fruits - Home">
             <div className={`relative ${logoSizeClass}`}>
               <Image
                 src="/LOGO_Kaplanlar_white.png"
@@ -58,7 +58,7 @@ export default function Header() {
                 }`}
               />
               <Image
-                src="/LOGO_Kaplanlar-removebg-preview.png"
+                src="/LOGO_Kaplanlar_white.png"
                 alt="Kaplanlar logo (green)"
                 fill
                 priority
@@ -70,15 +70,15 @@ export default function Header() {
           </Link>
 
           {/* Desktop navigation */}
-          <nav className={`hidden md:flex items-center gap-8 font-medium transition-colors duration-500 ease-in-out ${textClass} ${linkSizeClass}`}>
+          <nav className={`hidden md:flex items-center gap-8 font-medium transition-all duration-500 ease-in-out ${textClass} ${linkSizeClass}`}>
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className={`${linkHover} transition-colors duration-500 ease-in-out`}>
+              <Link key={item.href} href={item.href} className={`${linkHover} transition-all duration-500 ease-in-out`}>
                 {item.label}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="ml-2 inline-flex items-center rounded-md bg-[#2E6B4D] px-4 py-2 text-white transition-colors duration-300 ease-in-out hover:bg-[#23523A]"
+              className="ml-2 inline-flex items-center rounded-md bg-[#2E6B4D] px-4 py-2 text-white transition-all duration-500 ease-in-out hover:bg-[#23523A]"
             >
               Contact Us
             </Link>

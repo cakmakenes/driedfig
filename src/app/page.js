@@ -5,15 +5,25 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen">
       {/* Hero section */}
-      <section className="relative isolate pt-16">{/* reserve space for fixed header height */}
-        <div className="relative h-[85vh] w-full overflow-hidden">
+      <section className="relative isolate">
+        <div className="relative h-[100vh] w-full overflow-hidden">
+          {/* Desktop hero image */}
           <Image
             src="/hero.png"
             alt="Basket of premium dried figs on a rustic table"
             fill
             priority
             sizes="100vw"
-            className="object-cover scale-105 blur-[1px]"
+            className="object-cover scale-105 hidden md:block"
+          />
+          {/* Mobile responsive hero image */}
+          <Image
+            src="/hero_responsive.png"
+            alt="Dried figs in a basket on a rustic table"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover scale-105 md:hidden"
           />
           {/* Gradient + dark veil for readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40" />
@@ -33,6 +43,66 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section className="py-16 bg-[#F8FAF9]">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+          <h2 className="text-3xl font-semibold text-[#1F2937] text-center mb-12">Why Us?</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Column 1: Naturalness and Purity */}
+            <div className="bg-white rounded-lg p-8 shadow-lg text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                <Image
+                  src="/leafbig.JPG"
+                  alt="Fig leaf icon"
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-4">Naturalness and Purity</h3>
+              <p className="text-[#6B7280] leading-relaxed">
+                Our figs are grown in Aydın's fertile lands using traditional methods without any additives. They are naturally dried in the sun.
+              </p>
+            </div>
+
+            {/* Column 2: From Farm to Table */}
+            <div className="bg-white rounded-lg p-8 shadow-lg text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                <Image
+                  src="/workerbig.JPG"
+                  alt="Farmer with basket icon"
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-4">From Farm to Your Table</h3>
+              <p className="text-[#6B7280] leading-relaxed">
+                Our products are carefully packaged immediately after harvest and delivered directly to your door while preserving freshness. Direct taste.
+              </p>
+            </div>
+
+            {/* Column 3: Health and Taste */}
+            <div className="bg-white rounded-lg p-8 shadow-lg text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                <Image
+                  src="/heartbig.JPG"
+                  alt="Heart with figs icon"
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-4">Health and Taste Combined</h3>
+              <p className="text-[#6B7280] leading-relaxed">
+                Rich in fiber, vitamins, and minerals, figs contribute to healthy eating while being a uniquely sweet snack.
+              </p>
             </div>
           </div>
         </div>

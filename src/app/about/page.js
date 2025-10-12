@@ -60,10 +60,21 @@ export default function About() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-semibold text-[#1F2937] mb-4">Our Mission & Target</h2>
-            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto mb-6">
               We are committed to delivering excellence in every aspect of our business, 
               from production to customer satisfaction.
             </p>
+            <a
+              href="/KAPLANLAR E-CATALOGUE.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#2E6B4D] text-white px-6 py-3 rounded-lg hover:bg-[#23523A] transition-colors duration-300 font-medium"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              E-Catalog
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

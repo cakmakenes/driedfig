@@ -78,12 +78,17 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="ml-2 inline-flex items-center rounded-md bg-[#2E6B4D] px-4 py-2 text-white transition-all duration-500 ease-in-out hover:bg-[#23523A]"
+            <a
+              href="/KAPLANLAR E-CATALOGUE.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 inline-flex items-center gap-2 rounded-md bg-[#2E6B4D] px-4 py-2 text-white transition-all duration-500 ease-in-out hover:bg-[#23523A]"
             >
-              Contact Us
-            </Link>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              E-Catalog
+            </a>
           </nav>
 
           {/* Mobile hamburger */}
@@ -116,13 +121,18 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="mt-1 inline-flex items-center justify-center rounded-md bg-[#2E6B4D] px-3 py-2 text-white hover:bg-[#23523A]"
+              <a
+                href="/KAPLANLAR E-CATALOGUE.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 inline-flex items-center gap-2 justify-center rounded-md bg-[#2E6B4D] px-3 py-2 text-white hover:bg-[#23523A]"
                 onClick={() => setOpen(false)}
               >
-                Contact Us
-              </Link>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                E-Catalog
+              </a>
             </div>
           </div>
         )}

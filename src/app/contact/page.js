@@ -57,15 +57,21 @@ export default function Contact() {
 
   return (
     <div className="font-sans min-h-screen bg-[#F8FAF9]">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-semibold text-[#1F2937] mb-4">Contact Us</h1>
-          <p className="text-[#6B7280] text-lg">
-            Get in touch with us for product inquiries, private label, or logistics.
+      {/* Hero Section */}
+      <div className="bg-gradient-to-b from-[#2E6B4D] to-[#23523A] text-white py-20">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 text-center">
+          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
+          <p className="text-xl text-[#CDE2D8] max-w-3xl mx-auto">
+            Get in touch with us for product inquiries, private label, or logistics. 
+            We're here to help you with all your dried fruit needs.
           </p>
         </div>
+      </div>
 
-        <div className="max-w-2xl mx-auto">
+      {/* Contact Form Section */}
+      <div className="py-16">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+          <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -186,6 +192,7 @@ export default function Contact() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
+          </div>
         </div>
       </div>
     </div>

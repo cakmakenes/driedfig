@@ -162,7 +162,7 @@ export default function Products() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/raisins.jpg"
+                  src="/raisins.JPG"
                   alt="Premium Raisins"
                   fill
                   className="object-cover"

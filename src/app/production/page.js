@@ -5,6 +5,8 @@ import Image from "next/image";
 
 export default function Production() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
 
   const productionImages = [
     {
@@ -18,7 +20,7 @@ export default function Production() {
       description: "Our figs are carefully laid out under the sun for natural drying, preserving their authentic flavor and nutritional value."
     },
     {
-      src: "/3Fumugation.jpg", 
+      src: "/3Fumugation.jpg",
       title: "Fumigation Room",
       description: "State-of-the-art fumigation facilities ensure our products meet international quality and safety standards."
     },
@@ -66,6 +68,30 @@ export default function Production() {
     setCurrentImage(index);
   };
 
+  const onTouchStart = (e) => {
+    setTouchStartX(e.changedTouches[0].clientX);
+    setTouchEndX(null);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEndX(e.changedTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (touchStartX === null || touchEndX === null) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 50;
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > 0) {
+        nextImage();
+      } else {
+        prevImage();
+      }
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
   return (
     <div className="font-sans min-h-screen bg-[#F8FAF9]">
       {/* Hero Section */}
@@ -93,7 +119,12 @@ export default function Production() {
           {/* Carousel Container */}
           <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden max-w-4xl mx-auto">
             {/* Main Image Display */}
-            <div className="relative h-[400px] md:h-[500px] lg:h-[600px]">
+            <div
+              className="relative h-[400px] md:h-[500px] lg:h-[600px]"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <Image
                 src={productionImages[currentImage].src}
                 alt={productionImages[currentImage].title}
@@ -111,10 +142,10 @@ export default function Production() {
                 <p className="text-lg text-[#CDE2D8] max-w-2xl">{productionImages[currentImage].description}</p>
               </div>
 
-              {/* Navigation Arrows */}
+              {/* Navigation Arrows (hidden on mobile) */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+                className="hidden md:inline-flex absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
                 aria-label="Previous image"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +155,7 @@ export default function Production() {
               
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+                className="hidden md:inline-flex absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
                 aria-label="Next image"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

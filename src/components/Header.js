@@ -26,6 +26,7 @@ export default function Header() {
     { href: "/production", label: "Production" },
     { href: "/brands", label: "Brands" },
     { href: "/products", label: "Products" },
+    { href: "/news", label: "News" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -55,17 +56,17 @@ export default function Header() {
                 sizes="(max-width: 768px) 150px, 210px"
                 priority
                 className={`object-contain will-change-transform transition-all duration-500 ease-in-out drop-shadow-lg ${
-                  scrolled ? "opacity-0 -translate-y-1 scale-95" : "opacity-100 translate-y-0 scale-100"
+                  scrolled ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"
                 }`}
               />
               <Image
-                src="/LOGO_Kaplanlar-removebg-preview.png"
+                src="/LOGO_Kaplanlar_white.png"
                 alt="Kaplanlar logo (green)"
                 fill
                 sizes="(max-width: 768px) 150px, 200px"
                 priority
                 className={`object-contain will-change-transform transition-all duration-500 ease-in-out drop-shadow-lg ${
-                  scrolled ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"
+                  scrolled ? "opacity-0 translate-y-1 scale-95" : "opacity-100 translate-y-0 scale-100"
                 }`}
               />
             </div>

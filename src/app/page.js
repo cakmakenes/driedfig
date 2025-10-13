@@ -108,11 +108,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Packaging Options Section */}
+      <section className="py-16 bg-[#E1DDD4]">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-[#1F2937] mb-4">Packaging Options</h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Choose from our variety of packaging solutions tailored for retail, wholesale, and private label needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { src: "/kutu1.jpeg", title: "Window Box 2500g" },
+              { src: "/kutu2.jpeg", title: "Premium Green Box 2500g" },
+              { src: "/kutu3.jpg", title: "Black Gold Box 10kg" },
+              { src: "/kutu4.jpg", title: "Classic White Box 2000g" },
+              { src: "/kutu5.jpg", title: "Premium Green Box 1000g" },
+              { src: "/kutu6.jpg", title: "Classic Kraft Box 2500g" },
+              { src: "/kutu7.jpg", title: "Retail Window Box" },
+            ].map((box) => (
+              <div key={box.src} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="relative aspect-[4/2.5]">
+                  <Image src={box.src} alt={box.title} fill className="object-cover" sizes="(max-width:1024px) 100vw, 33vw" />
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                  <h3 className="text-[#1F2937] font-semibold">{box.title}</h3>
+                  <Link href="/contact" className="text-[#2E6B4D] hover:underline text-sm">Request</Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Placeholder main sections per design; to be implemented next */}
-      <main className="mx-auto max-w-[1200px] px-4 sm:px-6 py-16">
+    {/*   <main className="mx-auto max-w-[1200px] px-4 sm:px-6 py-16">
         <h2 className="text-2xl font-semibold text-[#1F2937]">Welcome</h2>
         <p className="mt-2 text-[#6B7280]">Homepage sections will follow the design specification.</p>
-      </main>
+      </main> */}
     </div>
   );
 }

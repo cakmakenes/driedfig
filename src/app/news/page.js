@@ -6,8 +6,8 @@ import Image from 'next/image';
 import imageUrlBuilder from '@sanity/image-url';
 
 // Sanity'den resimleri çekmek için bir yardımcı fonksiyon
-const builder = imageUrlBuilder(client);
-function urlFor(source) {
+function urlFor(source, client) {
+  const builder = imageUrlBuilder(client);
   return builder.image(source);
 }
 
@@ -42,7 +42,7 @@ export default async function NewsPage() {
             <div className="overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
               {post.coverImage && (
                 <Image
-                  src={urlFor(post.coverImage).width(500).height(300).url()}
+                  src={urlFor(post.coverImage, client).width(500).height(300).url()}
                   alt={post.title}
                   width={500}
                   height={300}

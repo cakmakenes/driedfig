@@ -6,8 +6,9 @@ import { PortableText } from '@portabletext/react';
 import imageUrlBuilder from '@sanity/image-url';
 import NewsGallery from '@/components/NewsGallery';
 
-const builder = imageUrlBuilder(client);
-function urlFor(source) {
+// Sanity'den resimleri çekmek için bir yardımcı fonksiyon
+function urlFor(source, client) {
+  const builder = imageUrlBuilder(client);
   return builder.image(source);
 }
 
@@ -31,7 +32,7 @@ export default async function PostPage({ params }) {
   }
 
   const gallerySources = [post.coverImage, ...(post.images || [])].filter(Boolean);
-  const galleryUrls = gallerySources.map((img) => urlFor(img).width(1600).url());
+  const galleryUrls = gallerySources.map((img) => urlFor(img, client).width(1600).url());
 
   return (
     <article>

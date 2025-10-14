@@ -1,5 +1,5 @@
 // app/news/page.jsx
-import { client } from '@/lib/sanity.client'; // Az önce oluşturduğumuz client
+import { getClient } from '@/lib/sanity.client'; // draft mode-aware client
 import { groq } from 'next-sanity';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -23,6 +23,7 @@ const postsQuery = groq`*[_type == "post"] | order(date desc, _updatedAt desc) {
 export const revalidate = 60; // 60 saniyede bir veriyi yeniden kontrol et (isteğe bağlı)
 
 export default async function NewsPage() {
+  const client = await getClient();
   const posts = await client.fetch(postsQuery);
 
   return (

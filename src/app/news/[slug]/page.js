@@ -1,5 +1,5 @@
 // app/news/[slug]/page.jsx
-import { client } from '@/lib/sanity.client';
+import { getClient } from '@/lib/sanity.client';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
@@ -23,6 +23,7 @@ export const revalidate = 60;
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
+  const client = await getClient();
   const post = await client.fetch(postQuery, { slug });
 
   if (!post) {

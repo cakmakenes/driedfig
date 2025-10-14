@@ -1,4 +1,5 @@
 import { createClient } from 'next-sanity'
+import { draftMode } from 'next/headers'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
@@ -16,8 +17,24 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: !token, // if we have a token (private dataset), disable CDN to ensure fresh data
-  token, // Only used on the server; do not expose on client components
+  useCdn: !token,
+  token,
   perspective: 'published',
   ignoreBrowserTokenWarning: true,
 })
+
+export async function getClient() {
+  const { isEnabled } = await draftMode()
+  return createClient({
+    projectId,
+    dataset,
+    apiVersion,
+    // Disable CDN in draft mode to ensure fresh data
+    useCdn: isEnabled ? false : !token,
+    token,
+    // Show drafts + overlays for visual editing when enabled
+    perspective: isEnabled ? 'previewDrafts' : 'published',
+    stega: isEnabled,
+    ignoreBrowserTokenWarning: true,
+  })
+}

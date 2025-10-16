@@ -98,6 +98,7 @@ export default function Header() {
               scrolled ? "p-2 border-white/70 text-white" : "p-3 border-white/60 text-white"
             }`}
             aria-label="Open menu"
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -108,35 +109,33 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile menu drawer */}
-        {open && (
-          <div className="md:hidden py-3">
-            <div className={`flex flex-col gap-2 ${scrolled ? "bg-black/60" : "bg-black/70"} rounded-md p-3 transition-colors duration-500 ease-in-out`}>
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-2 py-2 rounded text-white ${linkHover}`}
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href="/KAPLANLAR E-CATALOGUE.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 inline-flex items-center gap-2 justify-center rounded-md bg-[#2E6B4D] px-3 py-2 text-white hover:bg-[#23523A]"
+        {/* Mobile menu drawer with open/close animation */}
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${open ? 'max-h-96 py-3' : 'max-h-0 py-0'}`}>
+          <div className={`flex flex-col gap-2 ${scrolled ? 'bg-black/60' : 'bg-black/70'} rounded-md p-3 transition-all duration-300 ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-2 py-2 rounded text-white ${linkHover}`}
                 onClick={() => setOpen(false)}
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-                E-Catalog
-              </a>
-            </div>
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href="/KAPLANLAR E-CATALOGUE.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex items-center gap-2 justify-center rounded-md bg-[#2E6B4D] px-3 py-2 text-white hover:bg-[#23523A]"
+              onClick={() => setOpen(false)}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              E-Catalog
+            </a>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

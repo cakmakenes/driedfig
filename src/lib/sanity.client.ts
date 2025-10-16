@@ -17,24 +17,33 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: !token,
-  token,
+  useCdn: true,
   perspective: 'published',
   ignoreBrowserTokenWarning: true,
 })
 
 export async function getClient() {
   const { isEnabled } = await draftMode()
+  // In preview/draft mode: disable CDN and include token for private datasets
+  if (isEnabled) {
+    return createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      useCdn: false,
+      token,
+      perspective: 'previewDrafts',
+      stega: true,
+      ignoreBrowserTokenWarning: true,
+    })
+  }
+  // Published mode: prefer CDN and no token to maximize caching
   return createClient({
     projectId,
     dataset,
     apiVersion,
-    // Disable CDN in draft mode to ensure fresh data
-    useCdn: isEnabled ? false : !token,
-    token,
-    // Show drafts + overlays for visual editing when enabled
-    perspective: isEnabled ? 'previewDrafts' : 'published',
-    stega: isEnabled,
+    useCdn: true,
+    perspective: 'published',
     ignoreBrowserTokenWarning: true,
   })
 }

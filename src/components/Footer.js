@@ -31,23 +31,28 @@ export default function Footer() {
             <div className="mt-6 space-y-3 text-white/90">
               <div>
                 <span className="block text-white/60">Phone</span>
-                <a href="tel:+902563456789" className="hover:text-[#CDE2D8]">0256 326 03 26</a>
+              <a href="tel:+905326639009" className="hover:text-[#CDE2D8]">+90 532 663 90 09</a>
               </div>
-              <div>
-                <span className="block text-white/60">Fax</span>
-                <a href="tel:+902563456788" className="hover:text-[#CDE2D8]">0256 315 00 26</a>
-              </div>
+            <div>
+              <span className="block text-white/60">Phone</span>
+              <a href="tel:+902563260326" className="hover:text-[#CDE2D8]">0256 326 03 26</a>
+            </div>
               <div>
                 <span className="block text-white/60">Email</span>
                 <a href="mailto:info@kaplanlar.com" className="hover:text-[#CDE2D8]">info@kaplanlarincir.com.tr</a>
               </div>
               <div>
                 <span className="block text-white/60">Address</span>
-                <p>
+              <a
+                href="https://maps.app.goo.gl/s1x3bdbunuCgtSWz5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#CDE2D8]"
+              >
                 Arslanlı Cumhuriyet Mah. Esat Ergüler Blv. 55 Nazilli
-                  <br />
-                  Aydın, Türkiye
-                </p>
+                <br />
+                Aydın, Türkiye
+              </a>
               </div>
             </div>
           </div>

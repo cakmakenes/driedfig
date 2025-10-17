@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,6 +16,8 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [phoneError, setPhoneError] = useState("");
+  const phoneWrapperRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -25,8 +30,22 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setPhoneError("");
 
     try {
+      const pn = parsePhoneNumberFromString(formData.phone || "");
+      if (!pn || !pn.isValid()) {
+        setPhoneError("Please enter a valid phone number.");
+        setSubmitStatus("error");
+        // Scroll into view on mobile if not visible
+        try {
+          phoneWrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+          // Try to focus the input
+          const el = document.getElementById("phone");
+          if (el) el.focus();
+        } catch {}
+        return;
+      }
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -45,6 +64,7 @@ export default function Contact() {
           subject: "",
           message: "",
         });
+        setPhoneError("");
       } else {
         setSubmitStatus("error");
       }
@@ -85,7 +105,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-black placeholder:text-gray-500"
                 />
               </div>
 
@@ -100,7 +120,8 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
+                  placeholder="name@example.com"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-black placeholder:text-gray-500"
                 />
               </div>
 
@@ -114,22 +135,35 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-black placeholder:text-gray-500"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-[#1F2937] mb-2">
+                <label className="block text-sm font-medium text-[#1F2937] mb-2">
                   Phone Number
                 </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
-                />
+                <div ref={phoneWrapperRef} className={`${phoneError ? "ring-2 ring-red-500 rounded-md animate-shake" : ""}`}>
+                  <PhoneInput
+                    country={"tr"}
+                    value={formData.phone}
+                    onChange={(value) => {
+                      setFormData((p) => ({ ...p, phone: value }));
+                      if (phoneError) setPhoneError("");
+                    }}
+                    enableSearch
+                    inputProps={{ required: true, name: "phone", id: "phone", "aria-invalid": !!phoneError, "aria-describedby": phoneError ? "phone-error" : undefined }}
+                    inputClass="!text-black"
+                    inputStyle={{ width: "100%", height: "48px", color: "#000", backgroundColor: "#fff", borderColor: phoneError ? "#ef4444" : "#d1d5db" }}
+                    buttonStyle={{ borderTopLeftRadius: "0.375rem", borderBottomLeftRadius: "0.375rem" }}
+                    dropdownStyle={{ zIndex: 60, color: "#000", backgroundColor: "#fff" }}
+                    searchStyle={{ color: "#000", backgroundColor: "#fff" }}
+                    masks={{ tr: "... ... .. .." }}
+                  />
+                </div>
+                {phoneError && (
+                  <p id="phone-error" className="mt-2 text-sm text-red-600">{phoneError}</p>
+                )}
               </div>
             </div>
 
@@ -144,7 +178,7 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-black placeholder:text-gray-500"
               />
             </div>
 
@@ -159,7 +193,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2E6B4D] focus:border-transparent text-black placeholder:text-gray-500"
               />
             </div>
 

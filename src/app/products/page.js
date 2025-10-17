@@ -38,6 +38,30 @@ export default function Products() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             {/* Product Card 7: Dried Figs */}
+             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
+              <div className="aspect-square relative">
+                <Image
+                  src="/fig.JPG"
+                  alt="Premium Dried Figs"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-[#1F2937] mb-3">Premium Dried Figs</h3>
+                <p className="text-[#6B7280] leading-relaxed mb-4">
+                  Our signature product - naturally sun-dried figs from Aydın region. Rich in fiber, vitamins, and natural sweetness with traditional Turkish quality.
+                </p>
+                <Link 
+                  href="/products/fig" 
+                  className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
+                >
+                  Examine Now
+                </Link>
+              </div>
+            </div>
+            
             {/* Product Card 1: Dried Apricots */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
@@ -182,29 +206,7 @@ export default function Products() {
               </div>
             </div>
 
-            {/* Product Card 7: Dried Figs */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
-              <div className="aspect-square relative">
-                <Image
-                  src="/fig.JPG"
-                  alt="Premium Dried Figs"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1F2937] mb-3">Premium Dried Figs</h3>
-                <p className="text-[#6B7280] leading-relaxed mb-4">
-                  Our signature product - naturally sun-dried figs from Aydın region. Rich in fiber, vitamins, and natural sweetness with traditional Turkish quality.
-                </p>
-                <Link 
-                  href="/products/fig" 
-                  className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
-                >
-                  Examine Now
-                </Link>
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>

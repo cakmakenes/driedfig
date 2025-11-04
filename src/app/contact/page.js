@@ -18,6 +18,7 @@ export default function Contact() {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [phoneError, setPhoneError] = useState("");
   const phoneWrapperRef = useRef(null);
+  const [selectedCountry, setSelectedCountry] = useState("tr");
 
   const handleChange = (e) => {
     setFormData({
@@ -45,9 +46,19 @@ export default function Contact() {
         } catch {}
         return;
       }
-      // Ensure phone number starts with + for proper parsing
+      // react-phone-input-2 returns phone with country code but without + sign
+      // We need to add + for libphonenumber-js to parse correctly
       const phoneWithPlus = phoneValue.startsWith("+") ? phoneValue : `+${phoneValue}`;
-      const pn = parsePhoneNumberFromString(phoneWithPlus);
+      
+      // Parse with the selected country for better accuracy
+      let pn = parsePhoneNumberFromString(phoneWithPlus, selectedCountry.toUpperCase());
+      
+      // If parsing fails, try without country code (let it auto-detect)
+      if (!pn || !pn.isValid()) {
+        pn = parsePhoneNumberFromString(phoneWithPlus);
+      }
+      
+      // Final validation
       if (!pn || !pn.isValid()) {
         setPhoneError("Please enter a valid phone number.");
         setSubmitStatus("error");
@@ -79,6 +90,7 @@ export default function Contact() {
           message: "",
         });
         setPhoneError("");
+        setSelectedCountry("tr");
       } else {
         setSubmitStatus("error");
       }
@@ -164,6 +176,9 @@ export default function Contact() {
                     onChange={(value) => {
                       setFormData((p) => ({ ...p, phone: value }));
                       if (phoneError) setPhoneError("");
+                    }}
+                    onChangeCountry={(country) => {
+                      setSelectedCountry(country.iso2.toLowerCase());
                     }}
                     enableSearch
                     inputProps={{ required: true, name: "phone", id: "phone", "aria-invalid": !!phoneError, "aria-describedby": phoneError ? "phone-error" : undefined }}

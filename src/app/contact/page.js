@@ -33,7 +33,21 @@ export default function Contact() {
     setPhoneError("");
 
     try {
-      const pn = parsePhoneNumberFromString(formData.phone || "");
+      const phoneValue = formData.phone || "";
+      // Basic check: phone should not be empty and should have more than just country code
+      if (!phoneValue || phoneValue.length < 4) {
+        setPhoneError("Please enter a valid phone number.");
+        setSubmitStatus("error");
+        try {
+          phoneWrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+          const el = document.getElementById("phone");
+          if (el) el.focus();
+        } catch {}
+        return;
+      }
+      // Ensure phone number starts with + for proper parsing
+      const phoneWithPlus = phoneValue.startsWith("+") ? phoneValue : `+${phoneValue}`;
+      const pn = parsePhoneNumberFromString(phoneWithPlus);
       if (!pn || !pn.isValid()) {
         setPhoneError("Please enter a valid phone number.");
         setSubmitStatus("error");

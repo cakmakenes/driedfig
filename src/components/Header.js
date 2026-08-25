@@ -121,7 +121,7 @@ export default function Header() {
         </div>
 
         {/* Mobile menu drawer with open/close animation */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ${open ? 'max-h-96 py-3' : 'max-h-0 py-0'}`}>
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${open ? 'max-h-[32rem] py-3' : 'max-h-0 py-0'}`}>
           <div className={`flex flex-col gap-2 ${scrolled ? 'bg-black/60' : 'bg-black/70'} rounded-md p-3 transition-all duration-300 ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
             {navItems.map((item) => (
               <Link

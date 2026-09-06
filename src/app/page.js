@@ -108,6 +108,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Certifications Badge Strip */}
+      <section className="py-12 bg-white border-y border-[#E1DDD4]">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
+            <p className="text-[#1F2937] font-semibold text-lg text-center sm:text-left">
+              Certified for
+              <br className="hidden sm:block" />
+              quality &amp; safety
+            </p>
+            <div className="flex items-center gap-10 sm:gap-14">
+              <div className="flex flex-col items-center gap-2">
+                <div className="relative w-20 h-20">
+                  <Image
+                    src="/HACCP_sertifika.webp"
+                    alt="HACCP food safety certification"
+                    fill
+                    className="object-contain"
+                    sizes="80px"
+                  />
+                </div>
+                <span className="text-sm font-medium text-[#6B7280]">HACCP</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="relative w-20 h-20">
+                  <Image
+                    src="/organik_tarim_sertifika.webp"
+                    alt="Organic farming certification"
+                    fill
+                    className="object-contain"
+                    sizes="80px"
+                  />
+                </div>
+                <span className="text-sm font-medium text-[#6B7280]">Organic Farming</span>
+              </div>
+            </div>
+            <Link
+              href="/about"
+              className="text-[#2E6B4D] font-medium hover:underline"
+            >
+              Learn more &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Packaging Options Section */}
       <section className="py-16 bg-[#E1DDD4]">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">

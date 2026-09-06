@@ -202,6 +202,57 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* Certifications Section */}
+      <div className="py-16 bg-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-semibold text-[#1F2937] mb-4">Certifications &amp; Quality</h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Our commitment to food safety and natural production is backed by internationally
+              recognized certifications.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {/* HACCP */}
+            <div className="bg-[#F8FAF9] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+              <div className="relative w-40 h-40 mb-6">
+                <Image
+                  src="/HACCP_sertifika.webp"
+                  alt="HACCP food safety certification"
+                  fill
+                  className="object-contain"
+                  sizes="160px"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-2">HACCP</h3>
+              <p className="text-[#6B7280]">
+                Hazard Analysis and Critical Control Points — ensuring food safety at every stage
+                of our production process.
+              </p>
+            </div>
+
+            {/* Organic Farming */}
+            <div className="bg-[#F8FAF9] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+              <div className="relative w-40 h-40 mb-6">
+                <Image
+                  src="/organik_tarim_sertifika.webp"
+                  alt="Organic farming certification"
+                  fill
+                  className="object-contain"
+                  sizes="160px"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-2">Organic Farming</h3>
+              <p className="text-[#6B7280]">
+                Certified organic production — naturally grown, additive-free dried fruits that
+                meet strict organic standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

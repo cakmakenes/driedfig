@@ -51,7 +51,7 @@ export default function Header() {
             <div className={`relative ${logoSizeClass}`}>
               <Image
                 src="/LOGO_Kaplanlar_white.png"
-                alt="Kaplanlar logo (white)"
+                alt="Kaplanlar Dried Fruits"
                 fill
                 sizes="(max-width: 768px) 150px, 210px"
                 priority
@@ -61,7 +61,8 @@ export default function Header() {
               />
               <Image
                 src="/LOGO_Kaplanlar_white.png"
-                alt="Kaplanlar logo (green)"
+                alt=""
+                aria-hidden="true"
                 fill
                 sizes="(max-width: 768px) 150px, 200px"
                 priority
@@ -105,11 +106,12 @@ export default function Header() {
             className={`md:hidden inline-flex items-center justify-center rounded-md border transition-all duration-500 ease-in-out ${
               scrolled ? "p-2 border-white/70 text-white" : "p-3 border-white/60 text-white"
             }`}
-            aria-label="Open menu"
+            aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
           >
-            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <line x1="3" y1="6" x2="21" y2="6" />
               <line x1="3" y1="12" x2="21" y2="12" />
               <line x1="3" y1="18" x2="21" y2="18" />
@@ -118,7 +120,7 @@ export default function Header() {
         </div>
 
         {/* Mobile menu drawer with open/close animation */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ${open ? 'max-h-[32rem] py-3' : 'max-h-0 py-0'}`}>
+        <div id="mobile-menu" className={`md:hidden overflow-hidden transition-all duration-300 ${open ? 'max-h-[32rem] py-3' : 'max-h-0 py-0'}`}>
           <div className={`flex flex-col gap-2 ${scrolled ? 'bg-black/60' : 'bg-black/70'} rounded-md p-3 transition-all duration-300 ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
             {navItems.map((item) => (
               <Link

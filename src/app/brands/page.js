@@ -1,5 +1,18 @@
 import Image from "next/image";
 
+export const metadata = {
+  title: "Our Brands",
+  description:
+    "Discover Kaplanlar's premium brand portfolio — Kaplanlar, SMS İNCİR and KAP-TAT — each dedicated to quality dried figs and dried fruits.",
+  alternates: { canonical: "/brands" },
+  openGraph: {
+    title: "Our Brands | Kaplanlar Dried Fruits",
+    description:
+      "Kaplanlar, SMS İNCİR and KAP-TAT — a portfolio of premium dried fig and dried fruit brands.",
+    url: "/brands",
+  },
+};
+
 export default function Brands() {
   const brands = [
     {
@@ -110,9 +123,12 @@ export default function Brands() {
                   </div>
 
                   <div className="pt-4">
-                    <button className="bg-[#2E6B4D] text-white px-6 py-3 rounded-lg hover:bg-[#23523A] transition-colors duration-300 font-medium">
+                    <a
+                      href="/contact"
+                      className="inline-block bg-[#2E6B4D] text-white px-6 py-3 rounded-lg hover:bg-[#23523A] transition-colors duration-300 font-medium"
+                    >
                       Learn More About {brand.name}
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

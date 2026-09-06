@@ -22,6 +22,45 @@ const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
 
 export const revalidate = 60;
 
+// Slug'a göre metadata için hafif sorgu
+const metaQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+  title,
+  excerpt,
+  coverImage
+}`;
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const client = await getClient();
+  const post = await client.fetch(metaQuery, { slug });
+
+  if (!post) {
+    return {
+      title: "News",
+      description: "Kaplanlar Dried Fruits news article.",
+    };
+  }
+
+  const description =
+    post.excerpt || `${post.title} — news from Kaplanlar Dried Fruits.`;
+  const ogImage = post.coverImage
+    ? urlFor(post.coverImage, client).width(1200).height(630).url()
+    : undefined;
+
+  return {
+    title: post.title,
+    description,
+    alternates: { canonical: `/news/${slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description,
+      url: `/news/${slug}`,
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
+    },
+  };
+}
+
 export default async function PostPage({ params }) {
   const { slug } = await params;
   const client = await getClient();

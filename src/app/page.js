@@ -142,11 +142,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Placeholder main sections per design; to be implemented next */}
-    {/*   <main className="mx-auto max-w-[1200px] px-4 sm:px-6 py-16">
-        <h2 className="text-2xl font-semibold text-[#1F2937]">Welcome</h2>
-        <p className="mt-2 text-[#6B7280]">Homepage sections will follow the design specification.</p>
-      </main> */}
     </div>
   );
 }

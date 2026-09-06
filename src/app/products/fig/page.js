@@ -1,6 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Premium Dried Figs",
+  description:
+    "Naturally sun-dried figs from the Aydın region — rich in fiber and natural sweetness. Specifications, packaging options and nutrition details from Kaplanlar.",
+  alternates: { canonical: "/products/fig" },
+  openGraph: {
+    title: "Premium Dried Figs | Kaplanlar Dried Fruits",
+    description:
+      "Naturally sun-dried Aydın figs with traditional Turkish quality. Specs, packaging and nutrition.",
+    url: "/products/fig",
+  },
+};
+
 export default function FigProduct() {
   return (
     <div className="font-sans min-h-screen bg-[#F8FAF9]">

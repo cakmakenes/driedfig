@@ -1,5 +1,18 @@
 import Image from "next/image";
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "Kaplanlar is a Nazilli, Aydın based exporter of premium dried figs and dried fruits, combining traditional Turkish methods with modern facilities and quality standards.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Kaplanlar Dried Fruits",
+    description:
+      "Our company story, mission and facilities — premium dried figs and dried fruits from Aydın, Türkiye.",
+    url: "/about",
+  },
+};
+
 export default function About() {
   return (
     <div className="font-sans min-h-screen bg-[#F8FAF9]">

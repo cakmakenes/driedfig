@@ -1,6 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Our Products",
+  description:
+    "Explore Kaplanlar's premium dried fruit collection — sun-dried figs, apricots, dates, pistachios, plums and raisins from Aydın, Türkiye.",
+  alternates: { canonical: "/products" },
+  openGraph: {
+    title: "Our Products | Kaplanlar Dried Fruits",
+    description:
+      "Premium sun-dried figs, apricots, dates, pistachios and more from Aydın, Türkiye.",
+    url: "/products",
+  },
+};
+
 export default function Products() {
   return (
     <div className="font-sans min-h-screen bg-[#F8FAF9]">
@@ -81,7 +94,7 @@ export default function Products() {
                   href="/contact" 
                   className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
                 >
-                  Examine Now
+                  Request a Quote
                 </Link>
               </div>
             </div>
@@ -105,7 +118,7 @@ export default function Products() {
                   href="/contact" 
                   className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
                 >
-                  Examine Now
+                  Request a Quote
                 </Link>
               </div>
             </div>
@@ -129,7 +142,7 @@ export default function Products() {
                   href="/contact" 
                   className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
                 >
-                  Examine Now
+                  Request a Quote
                 </Link>
               </div>
             </div>
@@ -153,7 +166,7 @@ export default function Products() {
                   href="/contact" 
                   className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
                 >
-                  Examine Now
+                  Request a Quote
                 </Link>
               </div>
             </div>
@@ -177,7 +190,7 @@ export default function Products() {
                   href="/contact" 
                   className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
                 >
-                  Examine Now
+                  Request a Quote
                 </Link>
               </div>
             </div>
@@ -201,7 +214,7 @@ export default function Products() {
                   href="/contact" 
                   className="inline-block w-full text-center rounded-md border-2 border-[#2E6B4D] bg-white text-[#2E6B4D] px-4 py-2 hover:bg-[#2E6B4D] hover:text-white transition-colors duration-300"
                 >
-                  Examine Now
+                  Request a Quote
                 </Link>
               </div>
             </div>

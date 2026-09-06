@@ -23,6 +23,19 @@ const postsQuery = groq`*[_type == "post"] | order(date desc, _updatedAt desc) {
 
 export const revalidate = 60; // 60 saniyede bir veriyi yeniden kontrol et (isteğe bağlı)
 
+export const metadata = {
+  title: "News",
+  description:
+    "Latest news, updates and stories from Kaplanlar Dried Fruits — harvest seasons, products and company announcements.",
+  alternates: { canonical: "/news" },
+  openGraph: {
+    title: "News | Kaplanlar Dried Fruits",
+    description:
+      "Latest news and updates from Kaplanlar Dried Fruits.",
+    url: "/news",
+  },
+};
+
 export default async function NewsPage() {
   const client = await getClient();
   const posts = await client.fetch(postsQuery);

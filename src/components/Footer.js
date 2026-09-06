@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
               <div>
                 <span className="block text-white/60">Email</span>
-                <a href="mailto:info@kaplanlar.com" className="hover:text-[#CDE2D8]">info@kaplanlarincir.com.tr</a>
+                <a href="mailto:info@kaplanlarincir.com.tr" className="hover:text-[#CDE2D8]">info@kaplanlarincir.com.tr</a>
               </div>
               <div>
                 <span className="block text-white/60">Address</span>

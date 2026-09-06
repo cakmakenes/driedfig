@@ -217,13 +217,13 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* HACCP */}
             <div className="bg-[#F8FAF9] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
-              <div className="w-44 h-44 rounded-full bg-white ring-1 ring-[#E1DDD4] shadow-sm flex items-center justify-center p-5 mb-6">
+              <div className="w-44 h-44 flex items-center justify-center mb-6">
                 <Image
                   src="/HACCP_sertifika.webp"
                   alt="HACCP food safety certification"
-                  width={160}
-                  height={160}
-                  className="object-contain w-auto h-full"
+                  width={176}
+                  height={176}
+                  className="object-contain w-full h-full"
                 />
               </div>
               <h3 className="text-xl font-semibold text-[#1F2937] mb-2">HACCP</h3>
@@ -235,13 +235,13 @@ export default function About() {
 
             {/* Organic Farming */}
             <div className="bg-[#F8FAF9] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
-              <div className="w-44 h-44 rounded-full bg-white ring-1 ring-[#E1DDD4] shadow-sm flex items-center justify-center p-5 mb-6">
+              <div className="w-44 h-44 flex items-center justify-center mb-6">
                 <Image
                   src="/organik_tarim_sertifika.webp"
                   alt="Organic farming certification"
-                  width={160}
-                  height={160}
-                  className="object-contain w-auto h-full"
+                  width={176}
+                  height={176}
+                  className="object-contain w-full h-full"
                 />
               </div>
               <h3 className="text-xl font-semibold text-[#1F2937] mb-2">Organic Farming</h3>

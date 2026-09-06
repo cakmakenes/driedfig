@@ -108,47 +108,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Certifications Badge Strip */}
-      <section className="py-12 bg-white border-y border-[#E1DDD4]">
+      {/* Certifications Section */}
+      <section className="py-16 bg-white">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
-            <p className="text-[#1F2937] font-semibold text-lg text-center sm:text-left">
-              Certified for
-              <br className="hidden sm:block" />
-              quality &amp; safety
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-[#1F2937] mb-4">Certified for Quality &amp; Safety</h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Our production is backed by internationally recognized certifications for food safety and natural farming.
             </p>
-            <div className="flex items-center gap-10 sm:gap-14">
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-28 h-28 rounded-full bg-white ring-1 ring-[#E1DDD4] shadow-sm flex items-center justify-center p-3">
-                  <Image
-                    src="/HACCP_sertifika.webp"
-                    alt="HACCP food safety certification"
-                    width={96}
-                    height={96}
-                    className="object-contain w-auto h-full"
-                  />
-                </div>
-                <span className="text-sm font-medium text-[#6B7280]">HACCP</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {/* HACCP Card */}
+            <div className="bg-white rounded-lg p-8 shadow-lg text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2">
+              <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+                <Image
+                  src="/HACCP_sertifika.webp"
+                  alt="HACCP food safety certification"
+                  width={128}
+                  height={128}
+                  className="object-contain w-full h-full"
+                />
               </div>
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-28 h-28 rounded-full bg-white ring-1 ring-[#E1DDD4] shadow-sm flex items-center justify-center p-3">
-                  <Image
-                    src="/organik_tarim_sertifika.webp"
-                    alt="Organic farming certification"
-                    width={96}
-                    height={96}
-                    className="object-contain w-auto h-full"
-                  />
-                </div>
-                <span className="text-sm font-medium text-[#6B7280]">Organic Farming</span>
-              </div>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-3">HACCP</h3>
+              <p className="text-[#6B7280] leading-relaxed">
+                Hazard Analysis and Critical Control Points, ensuring food safety at every stage of production.
+              </p>
             </div>
-            <Link
-              href="/about"
-              className="text-[#2E6B4D] font-medium hover:underline"
-            >
-              Learn more &rarr;
-            </Link>
+
+            {/* Organic Farming Card */}
+            <div className="bg-white rounded-lg p-8 shadow-lg text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2">
+              <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+                <Image
+                  src="/organik_tarim_sertifika.webp"
+                  alt="Organic farming certification"
+                  width={128}
+                  height={128}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-3">Organic Farming</h3>
+              <p className="text-[#6B7280] leading-relaxed">
+                Certified organic production, naturally grown and additive-free to meet strict organic standards.
+              </p>
+            </div>
           </div>
         </div>
       </section>

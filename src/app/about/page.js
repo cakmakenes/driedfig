@@ -34,7 +34,7 @@ export default function About() {
             {/* Company Image */}
             <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/company.jpg"
+                src="/company.webp"
                 alt="Kaplanlar Fig Company Production Facility"
                 fill
                 className="object-cover"

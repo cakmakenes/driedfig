@@ -46,9 +46,9 @@ export const metadata = {
     url: siteUrl,
     images: [
       {
-        url: "/hero.png",
-        width: 1200,
-        height: 630,
+        url: "/hero.webp",
+        width: 1920,
+        height: 1080,
         alt: "Basket of premium dried figs from Kaplanlar",
       },
     ],
@@ -58,7 +58,7 @@ export const metadata = {
     title: "Kaplanlar Dried Fruits",
     description:
       "Premium sun-dried figs and dried fruits from Aydın, Türkiye.",
-    images: ["/hero.png"],
+    images: ["/hero.webp"],
   },
   icons: {
     icon: "/favicon.ico",

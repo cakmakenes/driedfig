@@ -55,7 +55,7 @@ export default function Products() {
              <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/fig.JPG"
+                  src="/fig.webp"
                   alt="Premium Dried Figs"
                   fill
                   className="object-cover"
@@ -79,7 +79,7 @@ export default function Products() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/apricot.JPG"
+                  src="/apricot.webp"
                   alt="Dried Apricots"
                   fill
                   className="object-cover"
@@ -103,7 +103,7 @@ export default function Products() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/date.JPG"
+                  src="/date.webp"
                   alt="Medjool Dates"
                   fill
                   className="object-cover"
@@ -127,7 +127,7 @@ export default function Products() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/pistachio.jpg"
+                  src="/pistachio.webp"
                   alt="Premium Pistachios"
                   fill
                   className="object-cover"
@@ -151,7 +151,7 @@ export default function Products() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/plum.JPG"
+                  src="/plum.webp"
                   alt="Dried Plums"
                   fill
                   className="object-cover"
@@ -175,7 +175,7 @@ export default function Products() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/date2.JPG"
+                  src="/date2.webp"
                   alt="Mixed Dates Collection"
                   fill
                   className="object-cover"
@@ -199,7 +199,7 @@ export default function Products() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:-translate-y-2 cursor-pointer">
               <div className="aspect-square relative">
                 <Image
-                  src="/raisins.JPG"
+                  src="/raisins.webp"
                   alt="Premium Raisins"
                   fill
                   className="object-cover"

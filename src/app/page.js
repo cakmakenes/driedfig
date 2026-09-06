@@ -9,7 +9,7 @@ export default function Home() {
         <div className="relative h-[100vh] w-full overflow-hidden">
           {/* Desktop hero image */}
           <Image
-            src="/hero.png"
+            src="/hero.webp"
             alt="Basket of premium dried figs on a rustic table"
             fill
             priority
@@ -18,7 +18,7 @@ export default function Home() {
           />
           {/* Mobile responsive hero image */}
           <Image
-            src="/hero_responsive.png"
+            src="/hero_responsive.webp"
             alt="Dried figs in a basket on a rustic table"
             fill
             priority
@@ -168,13 +168,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { src: "/kutu1.jpeg", title: "Window Box 2500g" },
-              { src: "/kutu2.jpeg", title: "Premium Green Box 2500g" },
-              { src: "/kutu3.jpg", title: "Black Gold Box 10kg" },
-              { src: "/kutu4.jpg", title: "Classic White Box 2000g" },
-              { src: "/kutu5.jpg", title: "Premium Green Box 1000g" },
-              { src: "/kutu6.jpg", title: "Classic Kraft Box 2500g" },
-              { src: "/kutu7.jpg", title: "Retail Window Box" },
+              { src: "/kutu1.webp", title: "Window Box 2500g" },
+              { src: "/kutu2.webp", title: "Premium Green Box 2500g" },
+              { src: "/kutu3.webp", title: "Black Gold Box 10kg" },
+              { src: "/kutu4.webp", title: "Classic White Box 2000g" },
+              { src: "/kutu5.webp", title: "Premium Green Box 1000g" },
+              { src: "/kutu6.webp", title: "Classic Kraft Box 2500g" },
+              { src: "/kutu7.webp", title: "Retail Window Box" },
             ].map((box) => (
               <div key={box.src} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="relative aspect-[4/2.5]">

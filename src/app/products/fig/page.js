@@ -35,7 +35,7 @@ export default function FigProduct() {
             {/* Product Image */}
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/fig.JPG"
+                src="/fig.webp"
                 alt="Premium Dried Figs"
                 fill
                 className="object-cover"

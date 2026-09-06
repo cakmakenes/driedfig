@@ -118,26 +118,26 @@ export default function Home() {
               quality &amp; safety
             </p>
             <div className="flex items-center gap-10 sm:gap-14">
-              <div className="flex flex-col items-center gap-2">
-                <div className="relative w-20 h-20">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-28 h-28 rounded-full bg-white ring-1 ring-[#E1DDD4] shadow-sm flex items-center justify-center p-3">
                   <Image
                     src="/HACCP_sertifika.webp"
                     alt="HACCP food safety certification"
-                    fill
-                    className="object-contain"
-                    sizes="80px"
+                    width={96}
+                    height={96}
+                    className="object-contain w-auto h-full"
                   />
                 </div>
                 <span className="text-sm font-medium text-[#6B7280]">HACCP</span>
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="relative w-20 h-20">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-28 h-28 rounded-full bg-white ring-1 ring-[#E1DDD4] shadow-sm flex items-center justify-center p-3">
                   <Image
                     src="/organik_tarim_sertifika.webp"
                     alt="Organic farming certification"
-                    fill
-                    className="object-contain"
-                    sizes="80px"
+                    width={96}
+                    height={96}
+                    className="object-contain w-auto h-full"
                   />
                 </div>
                 <span className="text-sm font-medium text-[#6B7280]">Organic Farming</span>
